@@ -1,38 +1,113 @@
-Hey, I am Huang, Xuan (a.k.a. _@huxpro_). I worked on the [React Team](https://beta.reactjs.org/community/meet-the-team#react-core) at <del>Facebook</del>Meta.
+---
+layout: page
+title: About
+description: 打码改变世界
+keywords: 代码, 江山
+comments: true
+menu: 关于
+permalink: /about/
+---
 
-I considered myself as a hybrid between a software engineer specifically into the programming languages theories and implementations domain (i.e. compiler, type system, type-based formal verification, virtual machine, runtime systems, garbage collection), and a creative technologiest deeply caring about many humanistic aspects (e.g. visual, sound, interaction) in UI and HCI in general.
+我是国风，码而生，码而立。
 
-I also worked on the [Hermes JavaScript Engine](https://hermesengine.dev/), some other projects under the [Reality Labs (Research)](https://tech.fb.com/ar-vr/), and [ReasonML](https://reasonml.github.io/) (now [ReScript](https://rescript-lang.org/)) efforts at Meta (Facebook).
+## 简历
+[点我查看简历](https://guofeng007.github.io/anires/public/)
 
-In the past, I worked on [Alitrip (Fliggy)](https://www.alitrip.com/) mobile and web apps under the [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group), found and lead front-end infrastructure team at an unicorn startup company [Beijing Weiying (a.k.a. WePiao, now acquired by Maoyan)](https://www.crunchbase.com/organization/beijing-weiying-technology), and helped [Ele.me (now acquired by Alibaba)](https://en.wikipedia.org/wiki/Ele.me) to upgrade their mobile web site into [the first influential PWA (progressive web app) in China](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509).
+------------------------------------------------
+- 本尊：国风
+- 公司：百度2015-2018
+- 职业：移动端负责人
 
-I studied BA, Digital Media Art at [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) and MS, Computer Science (with a focus on programming languages, mainly supervised by [Prof. Matthew Fluet](https://www.cs.rit.edu/~mtf/)) at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology).
+------------------------------------------------
 
-##### Appearence
+仰慕「优雅编码的艺术」。
 
-- [React Labs: What We've Been Working On – June 2022][12] · React Blog · 2022
-- [React Without Memo][11] · [React Conf 2021](https://conf.reactjs.org/)
-- [Toward Hermes being the Default][11] · React Native Blog · 2021
-- React Native 0.64 with Hermes for iOS · [The RN Show Podcast Ep #5](https://www.callstack.com/podcast-react-native-show) · 2021
-- [Upgrading to Progressive Web Apps][9] · [JSConf China Shanghai 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI Guangzhou 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux Beijing 2017
-- PWA Rehashing · Baidu HQ Beijing 2017
-- [Service Worker 101][5] · GDG DevFest Beijing 2016
-- [Progressive Web Apps][4] · QCon Shanghai 2016
-- Progressive Web App in my POV · GDG IO Redux Beijing 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript Modularization Journey][1] · 2015
+坚信熟能生巧，努力改变人生。
 
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
-[10]: https://reactnative.dev/blog/2021/10/26/toward-hermes-being-the-default
-[11]: https://youtu.be/lGEMwh32soc
-[12]: https://reactjs.org/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022.html
+## 阅读过的书籍
+
+Android:《Android系统源代码情景分析》、《Android开发艺术探索》、《Android源码设计模式解析与实战》
+设计模式:《Head First 设计模式》、《设计模式之禅》
+著名:《浪潮之巅》、《数学之美》、《编程之美》
+面试:《剑指offer》、《编程之美》
+机器学习:《机器学习》、《人工智能》
+JVM:《手写JVM》、《JVM源码解析》
+源码:DroidPlugin、Android Source Code、HotFix
+
+
+## 联系
+tianfengjingjing@gmail.com
+{% for website in site.data.social %}
+* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
+{% endfor %}
+
+## Skill Keywords
+
+## Android
+### 1. 插件化
+- [DroidPlugin-360](https://github.com/DroidPluginTeam/DroidPlugin)
+- [VirtualApp-Lody(参与)](https://github.com/asLody/VirtualApp)
+- [VirtualAPK(滴滴)](https://github.com/didi/VirtualAPK)
+- [DL(任玉刚)](https://github.com/singwhatiwanna/dynamic-load-apk)
+
+***插件化两大流派：***
+参照 [Kugoo](https://juejin.im/entry/59cde341f265da065476f21a?utm_source=gold_browser_extension)
+**业务容器-兼容派（DiDi VirtualAPK,酷狗插件化）**
+
+1. 基本原理
+
+合并宿主和插件的ClassLoader 需要注意的是，插件中的类不可以和宿主重复
+合并插件和宿主的资源 重设插件资源的packageId，将插件资源和宿主资源合并
+去除插件包对宿主的引用 构建时通过Gradle插件去除插件对宿主的代码以及资源的引用
+
+2. 四大组件的实现原理
+
+Activity 采用宿主manifest中占坑的方式来绕过系统校验，然后再加载真正的activity；
+Service 动态代理AMS，拦截service相关的请求，将其中转给Service Runtime去处理，Service Runtime会接管系统的所有操作；
+Receiver 将插件中静态注册的receiver重新注册一遍；
+ContentProvider 动态代理IContentProvider，拦截provider相关的请求，将其中转给Provider Runtime去处理，Provider Runtime会接管系统的所有操作。
+
+**完全插件化-极客派**
+
+1. 基本原理
+
+Hook各种binder,AMS,PMS
+动态代理
+宿主进程共享
+
+2. 四大组件的实现原理
+
+Activity 占坑
+Service 静态转发
+Receiver 动态注册
+ContentProvider 进程内注册
+
+### 2. Hybrid
+- 糯米Hybrid
+- [JsBridge](https://github.com/lzyzsd/JsBridge)
+
+### 3. Router
+[ARouter,GenericModuleRouter](https://github.com/guofeng007/GenericModuleRouter/)
+
+### 4.热修复
+[HotFix （QZone方式）](https://github.com/dodola/HotFix/),
+[Tinker](https://github.com/Tencent/tinker/)
+[Robust](https://github.com/Meituan-Dianping/Robust)
+
+### 5.ReactNative
+[Facebook-ReactNative](http://facebook.github.io/react-native/)
+
+## 机器学习TensorFlow
+[CNN,DNN,RNN,LSTM](http://tensorflow.org/)
+
+
+
+
+{% for category in site.data.skills %}
+### {{ category.name }}
+<div class="btn-inline">
+{% for keyword in category.keywords %}
+<button class="btn btn-outline" type="button">{{ keyword }}</button>
+{% endfor %}
+</div>
+{% endfor %}
