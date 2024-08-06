@@ -1,14 +1,6 @@
----
-layout: page
-title: About
-description: 打码改变世界
-keywords: 代码, 江山
-comments: true
-menu: 关于
-permalink: /about/
----
 
-我是国风，码而生，码而立。
+
+# 我是国风，码而生，码而立。
 
 ## 简历
 [点我查看简历](https://guofeng007.github.io/anires/public/)
