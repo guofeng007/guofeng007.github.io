@@ -3,7 +3,7 @@
 # 我是国风，码而生，码而立。
 
 ## 简历
-[点我查看简历](https://www.guofeng007.com/anires/public/)
+[点我查看简历](https://guofeng007.com/anires/public/)
 
 ------------------------------------------------
 - 本尊：国风
